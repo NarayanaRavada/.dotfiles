@@ -34,11 +34,6 @@ vim.g.netrw_winsize = 25
 
 vim.g.mapleader = " "
 
-
-vim.g.context_highlight_tag = '<hide>'
-vim.g.context_highlight_border = '<hide>'
-vim.g.context_highlight_normal = 'Normal'
-
 -- autocmds
 vim.api.nvim_create_autocmd("FileType", {
     pattern = { "typescript", "typescriptreact", "javascript", "javascriptreact", "json", "jsonc", "go" },

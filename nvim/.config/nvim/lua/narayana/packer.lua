@@ -1,31 +1,46 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
+
     -- Packer can manage itself
-    -- update this ones the change has been merged
     use 'wbthomason/packer.nvim'
-    use 'notjl/mason-lspconfig.nvim'
+
     use {
         'nvim-telescope/telescope.nvim', branch = '0.1.x',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
-    -- colour schemes
-    use('navarasu/onedark.nvim')
-    use('olimorris/onedarkpro.nvim')
-    use { "catppuccin/nvim", as = "catppuccin" }
-    use('gruvbox-community/gruvbox')
-    use('rebelot/kanagawa.nvim')
-    use('folke/tokyonight.nvim')
+
+    use({
+        'rose-pine/neovim',
+   	     as = 'rose-pine',
+   	     config = function()
+   	     vim.cmd('colorscheme rose-pine')
+   	     end
+    })
+    use({
+        "folke/trouble.nvim",
+        config = function()
+            require("trouble").setup {
+                icons = false,
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            }
+        end
+    })
+
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
-    --use('mbbill/undotree')
+    use("theprimeagen/harpoon")
     use('tpope/vim-fugitive')
     use('preservim/nerdcommenter')
-    use('kyazdani42/nvim-web-devicons')
+    use("theprimeagen/refactoring.nvim")
+    use("nvim-treesitter/nvim-treesitter-context")
+    use({ 'jiangmiao/auto-pairs' })
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
-    use({ 'jiangmiao/auto-pairs' })
+
     use {
         'VonHeikemen/lsp-zero.nvim',
         requires = {
@@ -44,15 +59,11 @@ return require('packer').startup(function(use)
 
             -- Snippets
             { 'L3MON4D3/LuaSnip' },
-
-            -- rust analyzer
-            { 'rust-lang/rust.vim' },
-
-            -- prettier
-            { 'MunifTanjim/prettier.nvim' }
+            {'rafamadriz/friendly-snippets'},
         }
     }
 
-    -- context
-    use({ 'wellle/context.vim' })
+    use("folke/zen-mode.nvim")
+    use("eandrju/cellular-automaton.nvim")
+    use("laytan/cloak.nvim")
 end)

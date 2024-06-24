@@ -3,6 +3,7 @@ PROMPT=%(4~|.../%3~|%~)
 
 #ZSH_THEME="refined"
 ZSH_THEME="robbyrussell"
+EDITOR="nvim"
 
 # CASE_SENSITIVE="true"
 

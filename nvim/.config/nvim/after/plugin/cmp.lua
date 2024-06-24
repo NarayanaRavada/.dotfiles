@@ -1,4 +1,4 @@
-vim.opt.completeopt = {"menu", "menuone", "noselect"}
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
 local cmp = require('cmp')
 local luasnip = require('luasnip')
@@ -9,15 +9,15 @@ cmp.setup({
             luasnip.lsp_expand(args.body)
         end
     },
-    sources = cmp.config.sources( {
-        {name = 'nvim_lsp', keyword_length = 3},
-        {name = 'luasnip', keyword_length = 2},
+    sources = cmp.config.sources({
+        { name = 'nvim_lsp' },
+        { name = 'luasnip' },
     }),
     window = {
         documentation = cmp.config.window.bordered()
     },
     formatting = {
-        fields = {'menu', 'abbr', 'kind'},
+        fields = { 'menu', 'abbr', 'kind' },
         format = function(entry, item)
             local menu_icon = {
                 nvim_lsp = 'λ',
@@ -31,32 +31,9 @@ cmp.setup({
         end,
     },
     mapping = {
-        ['<Up>'] = cmp.mapping.select_prev_item(),
-        ['<Down>'] = cmp.mapping.select_next_item(),
-
         ['<C-p>'] = cmp.mapping.select_prev_item(),
         ['<C-n>'] = cmp.mapping.select_next_item(),
-
-        ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-f>'] = cmp.mapping.scroll_docs(4),
-
-        ['<C-e>'] = cmp.mapping.abort(),
-        ['<CR>'] = cmp.mapping.confirm({select = false}),
-
-        ['<C-d>'] = cmp.mapping(function(fallback)
-            if luasnip.jumpable(1) then
-                luasnip.jump(1)
-            else
-                fallback()
-            end
-        end, {'i', 's'}),
-
-        ['<C-b>'] = cmp.mapping(function(fallback)
-            if luasnip.jumpable(-1) then
-                luasnip.jump(-1)
-            else
-                fallback()
-            end
-        end, {'i', 's'}),
+        ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+        ['C-Space'] = cmp.mapping.complete(),
     },
 })
