@@ -35,7 +35,13 @@ return require('packer').startup(function(use)
     use('preservim/nerdcommenter')
     use("theprimeagen/refactoring.nvim")
     use("nvim-treesitter/nvim-treesitter-context")
-    use({ 'jiangmiao/auto-pairs' })
+    use {
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        config = function()
+            require("nvim-autopairs").setup {}
+        end
+    }
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }

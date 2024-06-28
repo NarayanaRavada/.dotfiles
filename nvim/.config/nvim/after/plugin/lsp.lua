@@ -2,14 +2,22 @@ local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
 
-lsp.ensure_installed({
-    'tsserver',
-    'gopls',
-    'rust_analyzer',
+require('mason').setup({})
+require('mason-lspconfig').setup({
+    ensure_installed = {
+        'tsserver',
+        'gopls',
+        'rust_analyzer',
+    },
+    handlers = {
+        function(server_name)
+            require('lspconfig')[server_name].setup({})
+        end,
+    },
 })
 
 -- Fix Undefined global 'vim'
-lsp.configure('lua-language-server', {
+require('lspconfig').lua_ls.setup({
     settings = {
         Lua = {
             diagnostics = {
@@ -29,12 +37,17 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
     ["<C-Space>"] = cmp.mapping.complete(),
 })
 
+cmp.setup({
+    mapping = cmp_mappings,
+    snippet = {
+      expand = function(args)
+        require('luasnip').lsp_expand(args.body)
+      end,
+    },
+})
+
 cmp_mappings['<Tab>'] = nil
 cmp_mappings['<S-Tab>'] = nil
-
-lsp.setup_nvim_cmp({
-    mapping = cmp_mappings
-})
 
 lsp.set_preferences({
     suggest_lsp_servers = false,
@@ -44,6 +57,18 @@ lsp.set_preferences({
         hint = 'H',
         info = 'I'
     }
+})
+
+lsp.format_on_save({
+  format_opts = {
+    async = false,
+    timeout_ms = 10000,
+  },
+  servers = {
+    ['tsserver'] = {'javascript', 'typescript'},
+    ['rust_analyzer'] = {'rust'},
+    ['gopls'] = {'go'},
+  }
 })
 
 lsp.on_attach(function(client, bufnr)
