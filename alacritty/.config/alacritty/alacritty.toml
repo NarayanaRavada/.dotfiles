@@ -42,19 +42,7 @@ foreground = '0xdcd7ba'
 TERM = "xterm-256color"
 
 [font]
-size = 10
-
-[font.bold]
-family = "Source Code Pro"
-style = "Bold"
-
-[font.bold_italic]
-family = "Operator Mono Book"
-style = "Bold Italic"
-
-[font.italic]
-family = "Operator Mono Book"
-style = "Italic"
+size = 9
 
 [font.normal]
 family = "Source Code Pro"

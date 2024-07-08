@@ -29,6 +29,8 @@ ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
 autoload -U compinit
 compinit
 
+bindkey -v
+
 #bindkey '\t' autosuggest-accept
 source $ZSH/oh-my-zsh.sh
 
@@ -65,12 +67,6 @@ alias hc="history -c"
 alias hg="history | grep"
 
 alias wind="sudo ntfs-3g /dev/nvme0n1p6 ~/windows"
-
-# google chrome alias
-alias google-chrome="google-chrome-stable --high-dpi-support=1 --force-device-scale-factor=1.2"
-
-# mpv
-alias mpv="mpv --ao=pulse"
 
 # tmux sessions
 alias tmux-sessioniser="~/Scripts/itstheone/tmux-sessioniser.sh"
