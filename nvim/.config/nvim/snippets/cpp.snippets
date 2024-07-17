@@ -1,25 +1,29 @@
 # minimal tempate
 snippet samayam 
     /*>
-     =  Lakshmi_Narayana [`strftime("%d %B, %G")`] =
+     = [ Lakshmi_Narayana  ] =
+     + [ `strftime("%d.%m.%y %H:%M:%S")` ] +
     <*/
 
     #include <bits/stdc++.h>
     using namespace std;
 
-    #define int int64_t
+    #define int long long
     #define FAST_IO                        \
         ios_base::sync_with_stdio(false);  \
         cin.tie(NULL); cout.tie(NULL);    
+	
+    const int inf = 5e18 + 3;
+
+    void solve() {
+        $0
+    }
 
     int32_t main() {
         FAST_IO;
         int tt = 1;
         cin >> tt;
-        while(tt--) {
-            $0
-            cout << '\n';
-        }
+        while(tt--) solve();
         return 0;
     }
 
