@@ -1,56 +1,19 @@
-#tabspaces = 4
-#theme = "vscode.dark"
+import = [
+  "/usr/lib/node_modules/alacritty-themes/themes/Tomorrow-Night.toml"
+]
+
 [cursor]
 style = "Underline"
 
-[colors]
-draw_bold_text_with_bright_colors = true
-
-[colors.bright]
-black =   '0x727169'
-red =     '0xe82424'
-green =   '0x98bb6c'
-yellow =  '0xe6c384'
-blue =    '0x7fb4ca'
-magenta = '0x938aa9'
-cyan =    '0x7aa89f'
-white =   '0xdcd7ba'
-
-[colors.cursor]
-cursor = "#ffffff"
-text = "#1d1f21"
-
-[colors.selection]
-background = '0x2d4f67'
-foreground = '0xc8c093'
-
-[colors.normal]
-black =   '0x090618'
-red =     '0xc34043'
-green =   '0x76946a'
-yellow =  '0xc0a36e'
-blue =    '0x7e9cd8'
-magenta = '0x957fb8'
-cyan =    '0x6a9589'
-white =   '0xc8c093'
-
-[colors.primary]
-background = '0x1f1f28'
-foreground = '0xdcd7ba'
-
 [env]
-TERM = "xterm-256color"
+TERM = "alacritty"
 
 [font]
-size = 9
+size = 8
 
-[font.normal]
-family = "Source Code Pro"
-style = "Regular"
-
-[font.offset]
-x = 0
-y = 1
+  [font.normal]
+  family = "Source Code Pro"
+  style = "Regular"
 
 [[keyboard.bindings]]
 action = "Paste"
@@ -137,22 +100,22 @@ mode = "~Alt"
 mods = "Shift"
 
 [scrolling]
-history = 5000
+history = 5_000
 
 [shell]
-args = ["--login"]
+args = [ "--login" ]
 program = "/bin/zsh"
 
 [window]
 decorations = "full"
 dynamic_padding = false
-opacity = 0.8
+opacity = 0.9
 title = "Alacritty"
 
-[window.class]
-general = "Alacritty"
-instance = "Alacritty"
+  [window.class]
+  general = "Alacritty"
+  instance = "Alacritty"
 
-[window.padding]
-x = 6
-y = 6
+  [window.padding]
+  x = 10
+  y = 6

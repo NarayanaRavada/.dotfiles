@@ -11,7 +11,7 @@ zstyle ':omz:update' frequency 13
 
 # Path
 #PATH=${HOME}/bin/scripts:${PATH}
-PATH=${HOME}/Scripts:$PATH
+PATH=$PATH:${HOME}/Scripts:/usr/local/go/bin
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"

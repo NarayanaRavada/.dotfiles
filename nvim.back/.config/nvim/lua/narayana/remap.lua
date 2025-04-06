@@ -18,20 +18,18 @@ vim.keymap.set("n", "bp", vim.cmd.bp)
 vim.keymap.set("n", "bn", vim.cmd.bn)
 vim.keymap.set("n", "bd", vim.cmd.bd)
 
--- funn
-vim.keymap.set("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>")
-
 -- quit vim
 vim.keymap.set("n", "q", ":q<CR>")
 
 -- cp
-vim.api.nvim_create_autocmd('FileType', {
-    pattern = { 'c','cpp','python','go' },
-    callback = function()
-        if vim.bo.ft == "cpp" or vim.bo.ft == "c" then
-            vim.keymap.set("n", "<leader>e",
-                ":silent! :vsplit term://zsh -c 'g++ -std=c++17 % -o %< && ./%<' && rm ./%< <CR>")
-        end
-    end,
-})
-
+--vim.api.nvim_create_autocmd('FileType', {
+    --pattern = { 'c','cpp','python','go' },
+    --callback = function()
+        --if vim.bo.ft == "cpp" or vim.bo.ft == "c" then
+            --vim.keymap.set("n", "<leader>e",
+                --":silent! :vsplit term://zsh -c 'g++ -std=c++17 % -o %< && ./%<' && rm ./%< <CR>")
+        --elseif vim.bo.ft == "python" then
+            --vim.keymap.set("n", "<leader>e", ":silent! :vsplit term://zsh -c 'python3 -u %' <CR>")
+        --end
+    --end,
+--})
