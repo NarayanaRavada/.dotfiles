@@ -69,6 +69,12 @@ return {
             }
         })
 
+        require('lspconfig').clangd.setup {
+          init_options = {
+            fallbackFlags = {'--std=c++20'}
+          },
+        }
+
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
         cmp.setup({
@@ -94,6 +100,7 @@ return {
 
         vim.diagnostic.config({
             -- update_in_insert = true,
+            virtual_text = true,
             float = {
                 focusable = false,
                 style = "minimal",

@@ -14,4 +14,5 @@ return {
     },
 
     "eandrju/cellular-automaton.nvim",
+    "preservim/nerdcommenter",
 }

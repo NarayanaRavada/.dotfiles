@@ -29,14 +29,6 @@ autocmd({"BufWritePre"}, {
     command = [[%s/\s\+$//e]],
 })
 
-autocmd('BufEnter', {
-    group = NGroup,
-    callback = function()
-        vim.cmd.colorscheme("rose-pine-moon")
-    end
-})
-
-
 autocmd('LspAttach', {
     group = NGroup,
     callback = function(e)

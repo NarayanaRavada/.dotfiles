@@ -13,16 +13,16 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "<leader>p", "\"_dP")
 vim.keymap.set("n", "<leader>v", "\"+p")
 
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
 -- handle buffers
 vim.keymap.set("n", "bp", vim.cmd.bp)
 vim.keymap.set("n", "bn", vim.cmd.bn)
 vim.keymap.set("n", "bd", vim.cmd.bd)
 
--- funn
-vim.keymap.set("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>")
-
--- quit vim
-vim.keymap.set("n", "q", ":q<CR>")
+vim.keymap.set("n", "<leader>ca", function ()
+  require("cellular-automaton").start_animation("make_it_rain")
+end)
 
 -- cp
 vim.api.nvim_create_autocmd('FileType', {

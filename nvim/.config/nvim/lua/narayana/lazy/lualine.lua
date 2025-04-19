@@ -2,7 +2,7 @@ return {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     opts = {
-        theme = 'powerline_dark',
+        theme = 'auto',
         options = {
             globalstatus = true,
             component_separators = '|',
