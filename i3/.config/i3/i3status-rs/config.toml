@@ -1,0 +1,65 @@
+[icons]
+icons = "material-nf"
+
+[theme]
+theme = "semi-native"
+
+#[[block]]
+#block = "focused_window"
+#[block.format]
+#full = "{[] = $title.str(max_w:60) |}"
+
+[[block]]
+block= "music"
+format = "{ $icon $title.str(max_w:20,rot_interval:0.5) |}"
+[[block.click]]
+button = "left"
+action = "play_pause"
+
+
+[[block]]
+block = "sound"
+
+[[block]]
+block = "battery"
+interval = 1
+
+#[[block]]
+#block = "backlight"
+#device = "amdgpu_bl1"
+
+[[block]]
+block = "custom"
+command = "light -G | awk '{printf(\"🔅 %.0f%%\", $1)}'"
+interval = 1
+
+[[block]]
+block = "memory"
+format = " $icon $mem_used_percents.eng(w:1) "
+interval = 30
+warning_mem = 70
+critical_mem = 90
+
+[[block]]
+block = "weather"
+format = " $icon $temp, $wind$direction "
+[block.service]
+name = "openweathermap"
+api_key = "a1de306cba47ec6d31d260a8a6f17b34"
+city_id = "1277333"
+units = "metric"
+forecast_hours = 9
+
+
+#[[block]]
+#block = "net"
+#format = " $icon {$ssid | eth0 }"
+#[[block.click]]
+#button = "left"
+#cmd = "alacritty -e nmtui"
+
+[[block]]
+block = "custom"
+cycle=["date '+ %F %a %T'"]
+interval=1
+

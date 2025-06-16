@@ -27,7 +27,7 @@ return {
                 },
             })
 
-            ColorIt();
+            ColorIt()
         end
     },
     {
