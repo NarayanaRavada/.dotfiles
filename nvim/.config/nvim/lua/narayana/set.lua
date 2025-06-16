@@ -28,6 +28,10 @@ vim.opt.splitbelow = true
 
 vim.opt.updatetime = 50
 
+vim.o.foldmethod = "indent"
+vim.o.foldenable = false
+vim.o.foldlevel = 0
+
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25

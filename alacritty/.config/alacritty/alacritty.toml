@@ -1,9 +1,6 @@
-import = [
-  "/usr/lib/node_modules/alacritty-themes/themes/Tomorrow-Night.toml"
-]
 
 [cursor]
-style = "Underline"
+style = { shape = "Block", blinking = "On" }
 
 [env]
 TERM = "alacritty"
@@ -11,9 +8,9 @@ TERM = "alacritty"
 [font]
 size = 8
 
-  [font.normal]
-  family = "Source Code Pro"
-  style = "Regular"
+[font.normal]
+family = "Source Code Pro"
+style = "Regular"
 
 [[keyboard.bindings]]
 action = "Paste"
@@ -102,14 +99,14 @@ mods = "Shift"
 [scrolling]
 history = 5_000
 
-[shell]
+[terminal.shell]
 args = [ "--login" ]
 program = "/bin/zsh"
 
 [window]
 decorations = "full"
 dynamic_padding = false
-opacity = 0.9
+opacity = 0.99
 title = "Alacritty"
 
   [window.class]
@@ -119,3 +116,10 @@ title = "Alacritty"
   [window.padding]
   x = 10
   y = 6
+
+[general]
+import = [
+  "/usr/lib/node_modules/alacritty-themes/themes/Tomorrow-Night.toml"
+]
+
+[terminal]
