@@ -1,15 +1,15 @@
 
 [cursor]
-style = { shape = "Block", blinking = "On" }
+style = { shape = "Underline", blinking = "On" }
 
 [env]
 TERM = "alacritty"
 
 [font]
-size = 8
+size = 11
 
 [font.normal]
-family = "Source Code Pro"
+family = "CartographCF Nerd Font"
 style = "Regular"
 
 [[keyboard.bindings]]
@@ -106,7 +106,7 @@ program = "/bin/zsh"
 [window]
 decorations = "full"
 dynamic_padding = false
-opacity = 0.99
+opacity = 0.88
 title = "Alacritty"
 
   [window.class]

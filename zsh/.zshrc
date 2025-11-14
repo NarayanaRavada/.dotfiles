@@ -20,7 +20,7 @@ plugins=(
 	zsh-autosuggestions
     zsh-syntax-highlighting
 	git
-	sudo 
+	sudo
 )
 
 typeset -A ZSH_HIGHLIGHT_STYLES
@@ -77,5 +77,8 @@ bindkey -s '\et' 'tmux-sessioniser\n'
 alias ls="exa"
 alias l="exa -l"
 alias la="exa -la"
+
+# rm - trash
+alias rm="trash"
 
 eval "$(starship init zsh)"
