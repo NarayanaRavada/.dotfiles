@@ -1,10 +1,24 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
+set -e  # Exit on error
 
-pushd $DOTFILES
-for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g")
-do
-    echo "stow $folder"
-    stow -D $folder
-    stow $folder
+# Convert to array using comma as separator
+STOW_FOLDERS=${STOW_FOLDERS:-"alacritty,hypr,i3,nvim,tmux,waybar,zsh,scripts"}
+IFS=',' read -r -a folders <<< "$STOW_FOLDERS"
+
+echo ""
+echo "🔧 Starting dotfile stow process..."
+echo ""
+
+for folder in "${folders[@]}"; do
+    if [[ -d "$folder" ]]; then
+        echo "✅ Stowing: $folder"
+        stow -D -t "$HOME" "$folder"
+        stow -t "$HOME" "$folder"
+    else
+        echo "❌ Skipping: $folder (not found in $(pwd))"
+    fi
 done
-popd
+
+echo ""
+echo "[Info] Done"
+

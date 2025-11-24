@@ -1,0 +1,184 @@
+/* GLOBAL DEFAULTS */
+
+* {
+  border: none;
+  border-radius: 10px;
+  font-family: "JetbrainsMono Nerd Font";
+  font-size: 15px;
+  min-height: 10px;
+}
+
+window#waybar {
+  background: transparent;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+/* ---------------------------------------------------------
+   COMMON MODULE BLOCK (APPLIED TO MOST MODULES)
+---------------------------------------------------------- */
+#workspaces,
+#custom-music,
+#network,
+#pulseaudio,
+#battery,
+#backlight,
+#clock,
+#memory,
+#cpu,
+#tray,
+#custom-uptime,
+#custom-power {
+  margin-top: 6px;
+  margin-left: 8px;
+  margin-bottom: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+}
+
+/* ---------------------------------------------------------
+   WINDOW BLOCK
+---------------------------------------------------------- */
+#window {
+  margin-top: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+  transition: none;
+  color: transparent;
+  background: transparent;
+}
+
+/* ---------------------------------------------------------
+   TAGS
+---------------------------------------------------------- */
+#tags {
+  margin-top: 6px;
+  padding-right: 2px;
+  margin-left: 10px;
+  margin-bottom: 0px;
+  border-radius: 10px;
+  transition: none;
+  background: #161320;
+  font-size: 4px;
+}
+
+#tags button {
+  transition: none;
+  background: transparent;
+  color: #B5E8E0;
+  font-size: 16px;
+  border-radius: 2px;
+}
+
+#tags button.occupied {
+  transition: none;
+  background: transparent;
+  color: #F28FAD;
+  font-size: 4px;
+}
+
+#tags button.focused {
+  color: #ABE9B3;
+  border-top: 2px solid #ABE9B3;
+  border-bottom: 2px solid #ABE9B3;
+}
+
+#tags button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+  color: #E8A2AF;
+  border-color: #E8A2AF;
+}
+
+#tags button.focused:hover {
+  color: #E8A2AF;
+}
+
+/* ---------------------------------------------------------
+   COLORS / CUSTOMIZATION PER MODULE
+---------------------------------------------------------- */
+
+#custom-music {
+  color: #161320;
+  background: #bd93f9;
+}
+
+#network {
+  color: #161320;
+  background: #bd93f9;
+}
+
+#pulseaudio {
+  color: #1A1826;
+  background: #FAE3B0;
+}
+
+#battery {
+  color: #161320;
+  background: #B5E8E0;
+}
+
+#backlight {
+  color: #161320;
+  background: #F8BD96;
+}
+
+#clock {
+  color: #161320;
+  background: #ABE9B3;
+}
+
+#memory {
+  color: #161320;
+  background: #DDB6F2;
+}
+
+#cpu {
+  color: #161320;
+  background: #96CDFB;
+}
+
+#tray {
+  color: #B5E8E0;
+  background: #161320;
+}
+
+#custom-uptime {
+  color: #89DCEB;
+  background: alpha(#161321, 0.6);
+}
+
+#custom-power {
+  color: #161320;
+  background: #F28FAD;
+  font-size: 20px;
+  margin-right: 8px;
+}
+
+/* ---------------------------------------------------------
+   BATTERY SPECIAL STATES
+---------------------------------------------------------- */
+
+#battery.charging,
+#battery.plugged {
+  background-color: #B5E8E0;
+  color: #161320;
+}
+
+#battery.critical:not(.charging) {
+  background-color: #B5E8E0;
+  color: #161320;
+  animation: blink 0.5s linear infinite alternate;
+}
+
+@keyframes blink {
+  to {
+    background-color: #BF616A;
+    color: #B5E8E0;
+  }
+}
+

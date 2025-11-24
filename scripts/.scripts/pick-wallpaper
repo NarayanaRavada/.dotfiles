@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+DIR=$HOME/.dotfiles/hypr/.config/hypr/assets/backgrounds
+
+# a simple wallpaper picker
+swww img $(find $DIR -type f | vicinae dmenu --no-metadata -p 'Pick a wallpaper...') --transition-type=any
