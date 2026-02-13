@@ -145,6 +145,7 @@ window#waybar.hidden {
 #tray {
   color: #B5E8E0;
   background: #161320;
+  margin-right: 25px;
 }
 
 #custom-uptime {

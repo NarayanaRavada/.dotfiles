@@ -15,7 +15,6 @@
     "custom/pomodoro",
     "cpu",
     "memory",
-    "network",
     "pulseaudio",
     "backlight",
     "battery",
@@ -113,8 +112,8 @@
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
     "format-alt": "{icon} {time}",
-    "format-good": "",
-    "format-full": "",
+    //"format-good": "",
+    //"format-full": "",
     "format-icons": ["", "", "", "", ""]
   },
 }
