@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set +x
+
+# Stop if not inside tmux
+[ -z "$TMUX" ] && return
+
+tmux send-keys "nvim ." C-m
+tmux new-window -n "scratch"
+tmux select-window -t 1

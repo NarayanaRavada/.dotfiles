@@ -2,7 +2,7 @@
 set -e  # Exit on error
 
 # Convert to array using comma as separator
-STOW_FOLDERS=${STOW_FOLDERS:-"alacritty,hypr,i3,nvim,tmux,waybar,zsh,scripts"}
+STOW_FOLDERS=${STOW_FOLDERS:-"alacritty,hypr,i3,nvim,tmux,waybar,zsh,scripts,ghostty"}
 IFS=',' read -r -a folders <<< "$STOW_FOLDERS"
 
 echo ""
