@@ -47,6 +47,19 @@ autocmd('LspAttach', {
     vim.api.nvim_create_autocmd("BufWritePre", {
       buffer = e.buf,
       callback = function()
+        local ignored_filetypes = {
+          "c",
+          "cpp",
+          "h",
+          "hpp",
+        }
+
+        local ft = vim.bo[e.buf].filetype
+
+        if vim.tbl_contains(ignored_filetypes, ft) then
+          return
+        end
+
         vim.lsp.buf.format({ async = false })
       end,
     })

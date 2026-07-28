@@ -10,7 +10,16 @@ return {
     require('telescope').setup({
       defaults = {
         winblend = 0,
-      }
+      },
+      pickers = {
+        find_files = {
+          theme = "dropdown",
+        },
+        buffers = {
+          theme = "dropdown",
+          previewer = false,
+        },
+      },
     })
 
     local preview_utils = require("telescope.previewers.utils")

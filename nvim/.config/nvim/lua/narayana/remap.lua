@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>pv", vim.cmd.Oil, { desc = "Oil (currrent file's dir)" })
+vim.keymap.set("n", "<leader>pd", "<cmc>Oil .<CR>", { desc = "Oil (root / cwd)" })
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -20,18 +21,17 @@ vim.keymap.set("n", "bp", vim.cmd.bp)
 vim.keymap.set("n", "bn", vim.cmd.bn)
 vim.keymap.set("n", "bd", vim.cmd.bd)
 
-vim.keymap.set("n", "<leader>ca", function ()
+vim.keymap.set("n", "<leader>ca", function()
   require("cellular-automaton").start_animation("make_it_rain")
 end)
 
 -- cp
 vim.api.nvim_create_autocmd('FileType', {
-    pattern = { 'c','cpp','python','go' },
-    callback = function()
-        if vim.bo.ft == "cpp" or vim.bo.ft == "c" then
-            vim.keymap.set("n", "<leader>e",
-                ":silent! :vsplit term://zsh -c 'g++ -std=c++17 % -o %< && ./%<' && rm ./%< <CR>")
-        end
-    end,
+  pattern = { 'c', 'cpp', 'python', 'go' },
+  callback = function()
+    if vim.bo.ft == "cpp" or vim.bo.ft == "c" then
+      vim.keymap.set("n", "<leader>e",
+        ":silent! :vsplit term://zsh -c 'g++ -std=c++17 % -o %< && ./%<' && rm ./%< <CR>")
+    end
+  end,
 })
-
